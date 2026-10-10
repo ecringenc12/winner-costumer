@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct musteri
+{
+	int id;
+	char adsoyad[200];
+	double tutar;
+};
+int main() {
+	struct musteri bilgi[3];
+    int i;
+    for(i=0;i<=2;i++)
+    {
+	printf("Musteri ID yaz-> ");
+	scanf("%d",&bilgi[i].id);
+	fflush(stdin);
+	printf("Musteri ad ve soyad yaz-> ");
+	gets(bilgi[i].adsoyad);
+	fflush(stdin);
+	printf("Musteri alisveris tutari yaz-> ");
+	scanf("%lf",&bilgi[i].tutar);
+    }
+    double en=bilgi[i].tutar;
+    int index=0;
+for(i=0;i<=2;i++)
+{
+	if(en<bilgi[i].tutar)
+	{
+		en=bilgi[i].tutar;
+		index=i;
+	}
+}
+printf("En yuksek tutarli musterimiz:\n");
+printf("AD->%s\n",bilgi[index].adsoyad);
+printf("ID->%d\n",bilgi[index].id);
+printf("TUTAR->%lf\n",bilgi[index].tutar);
+printf("GUNUN KAZANAN MUSTERISI...");
+
+
+	return 0;
+}
